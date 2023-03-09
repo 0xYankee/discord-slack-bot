@@ -1,5 +1,9 @@
 # discord-slack-bot
-A bridge between Discord and Slack channels. Ticket channels in Discord are represented as Threads in Slack to keep all tickets in a singular Slack channel.
+A bridge between Discord and Slack channels.
+
+### Features
+1. Messages are bridged between specific corresponding Discord and Slack channels.
+2. Ticket channels in Discord are represented as Threads in Slack to keep all tickets in a singular Slack channel.
 
 ## Documentations
 Discord
