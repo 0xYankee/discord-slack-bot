@@ -47,7 +47,7 @@ async function main() {
       console.log('Message received from discord-dev-chat', message);
       slack_web.chat.postMessage({
         channel: devChatSlackId,
-        text: `${message.content}`,
+        text: `${message.author.username}\n\n${message.content}\n\n${message.url}`,
         username: `Discord: ${message.author.username}`,
       });
     }
@@ -77,7 +77,7 @@ async function main() {
       console.log('Message received from discord-dev-support', message);
       slack_web.chat.postMessage({
         channel: devSupportSlackId,
-        text: `${message.content}`,
+        text: `${message.author.username}\n\n${message.content}\n\n${message.url}`,
         username: `Discord: ${message.author.username}`,
       });
     }
@@ -157,7 +157,7 @@ async function main() {
   });
 
   //Event -> Slack messageCreate ias a reply in thread
-  //Action -> Identify the the Slack parent message and corespond to the Discord channel name
+  //Action -> Identify the the Slack parent message and correspond to the Discord channel name
   //Action -> Identify the webhookClient (value) using the channel name (key) and send reply
   slack.event("message", ({message}) => {
     if (message.channel === ticketSlackId && message.thread_ts !== undefined) {
